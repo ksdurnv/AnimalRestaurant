@@ -6825,6 +6825,7 @@ MonoBehaviour:
     fishesNum: 0
     employeeNum: 0
     time: 
+  flyingEndPoints: []
   start: {fileID: 0}
   end: {fileID: 0}
   duration: 1
@@ -16013,7 +16014,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 0}
   - {fileID: 21300000, guid: e77c3d6f35f8b2045bb2b04fac249525, type: 3}
-  - {fileID: 21300000, guid: 0c9a18c296c4144449a398f851f7292d, type: 3}
+  - {fileID: 21300000, guid: 61ba8069f7179fa429d627c8b370a19e, type: 3}
   - {fileID: 21300000, guid: 3608a472580170240aa4a5f7ac67c3fe, type: 3}
   - {fileID: 21300000, guid: e77c3d6f35f8b2045bb2b04fac249525, type: 3}
 --- !u!114 &1575329644

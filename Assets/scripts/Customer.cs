@@ -56,7 +56,7 @@ public class Customer : AnimalController
                 maxOrder = gameObject.GetComponentInParent<Animal>().maxOrder;
 
                 FoodStack foodStack = new FoodStack();
-                foodStack.needFoodNum = UnityEngine.Random.Range(minOrder/5, maxOrder/5);
+                foodStack.needFoodNum = UnityEngine.Random.Range(minOrder, maxOrder);
                 //foodStack.needFoodNum = 6;
                 foodStack.type = FoodMachine.MachineType.BurgerMachine;
                 foodStacks.Add(foodStack);
@@ -67,7 +67,7 @@ public class Customer : AnimalController
                 maxOrder = gameObject.GetComponentInParent<Animal>().maxOrder;
 
                 FoodStack foodStack = new FoodStack();
-                foodStack.needFoodNum = UnityEngine.Random.Range(minOrder / 5, maxOrder / 5);
+                foodStack.needFoodNum = UnityEngine.Random.Range(minOrder, maxOrder);
                 //foodStack.needFoodNum = 5;
                 foodStack.type = FoodMachine.MachineType.CokeMachine;
                 foodStacks.Add(foodStack);

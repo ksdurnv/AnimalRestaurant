@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     public Image fadeImage;
     bool bGuideOn = false;
 
+    private float cameraSize;
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -63,8 +65,8 @@ public class UIManager : MonoBehaviour
 
                 drawBtn.gameObject.SetActive(false);
                 drawSpeedUpBtn.gameObject.SetActive(false);
-                StartCoroutine(FadeInFadeOut(true, 1));
 
+                StartCoroutine(FadeInFadeOut(true, 1));
             }
         });
 
@@ -80,6 +82,8 @@ public class UIManager : MonoBehaviour
                 {
                     instance.GameIns.applianceUIManager.currentBox.ClearFishes();
                 }
+                cameraSize = Camera.main.orthographicSize;                
+
                 StartCoroutine(FadeInFadeOut(true, 2));
             }
 
@@ -109,6 +113,14 @@ public class UIManager : MonoBehaviour
                 c.a = f;
                 if (fadeImage.color.a > 0.9)
                 {
+                    if (t == 1)
+                    {
+                        Camera.main.orthographicSize = cameraSize;
+                    }
+                    else if (t == 2)
+                    {
+                        Camera.main.orthographicSize = 15;
+                    }
                     ShowUI(t);
                     c.a = 0;
                     fadeImage.color = c;
