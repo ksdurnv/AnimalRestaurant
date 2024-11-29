@@ -1,0 +1,8 @@
+{
+  "id": "1",
+  "animal_name": "cat",
+  "animal_move_speed": "8",
+  "animal_eating_speed": "3",
+  "animal_max_hunger": "5",
+  "animal_cleanliness": "70"
+}

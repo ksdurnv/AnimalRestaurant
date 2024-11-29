@@ -1,0 +1,352 @@
+[
+  {
+    "level": 1,
+    "upgrade_cost": 100,
+    "sale_proceeds": 30,
+    "food_production_speed": 4,
+    "food_production_max_height": 5
+  },
+  {
+    "level": 2,
+    "upgrade_cost": 110,
+    "sale_proceeds": 33,
+    "food_production_speed": 3.9,
+    "food_production_max_height": 5
+  },
+  {
+    "level": 3,
+    "upgrade_cost": 120,
+    "sale_proceeds": 36,
+    "food_production_speed": 3.8,
+    "food_production_max_height": 5
+  },
+  {
+    "level": 4,
+    "upgrade_cost": 130,
+    "sale_proceeds": 39,
+    "food_production_speed": 3.7,
+    "food_production_max_height": 5
+  },
+  {
+    "level": 5,
+    "upgrade_cost": 140,
+    "sale_proceeds": 42,
+    "food_production_speed": 3.6,
+    "food_production_max_height": 5
+  },
+  {
+    "level": 6,
+    "upgrade_cost": 150,
+    "sale_proceeds": 45,
+    "food_production_speed": 3.8,
+    "food_production_max_height": 6
+  },
+  {
+    "level": 7,
+    "upgrade_cost": 160,
+    "sale_proceeds": 48,
+    "food_production_speed": 3.7,
+    "food_production_max_height": 6
+  },
+  {
+    "level": 8,
+    "upgrade_cost": 170,
+    "sale_proceeds": 51,
+    "food_production_speed": 3.6,
+    "food_production_max_height": 6
+  },
+  {
+    "level": 9,
+    "upgrade_cost": 180,
+    "sale_proceeds": 54,
+    "food_production_speed": 3.5,
+    "food_production_max_height": 6
+  },
+  {
+    "level": 10,
+    "upgrade_cost": 190,
+    "sale_proceeds": 57,
+    "food_production_speed": 3.4,
+    "food_production_max_height": 6
+  },
+  {
+    "level": 11,
+    "upgrade_cost": 200,
+    "sale_proceeds": 60,
+    "food_production_speed": 3.6,
+    "food_production_max_height": 7
+  },
+  {
+    "level": 12,
+    "upgrade_cost": 210,
+    "sale_proceeds": 63,
+    "food_production_speed": 3.5,
+    "food_production_max_height": 7
+  },
+  {
+    "level": 13,
+    "upgrade_cost": 220,
+    "sale_proceeds": 66,
+    "food_production_speed": 3.4,
+    "food_production_max_height": 7
+  },
+  {
+    "level": 14,
+    "upgrade_cost": 230,
+    "sale_proceeds": 69,
+    "food_production_speed": 3.3,
+    "food_production_max_height": 7
+  },
+  {
+    "level": 15,
+    "upgrade_cost": 240,
+    "sale_proceeds": 72,
+    "food_production_speed": 3.2,
+    "food_production_max_height": 7
+  },
+  {
+    "level": 16,
+    "upgrade_cost": 250,
+    "sale_proceeds": 75,
+    "food_production_speed": 3.4,
+    "food_production_max_height": 8
+  },
+  {
+    "level": 17,
+    "upgrade_cost": 260,
+    "sale_proceeds": 78,
+    "food_production_speed": 3.3,
+    "food_production_max_height": 8
+  },
+  {
+    "level": 18,
+    "upgrade_cost": 270,
+    "sale_proceeds": 81,
+    "food_production_speed": 3.2,
+    "food_production_max_height": 8
+  },
+  {
+    "level": 19,
+    "upgrade_cost": 280,
+    "sale_proceeds": 84,
+    "food_production_speed": 3.1,
+    "food_production_max_height": 8
+  },
+  {
+    "level": 20,
+    "upgrade_cost": 290,
+    "sale_proceeds": 87,
+    "food_production_speed": 3,
+    "food_production_max_height": 8
+  },
+  {
+    "level": 21,
+    "upgrade_cost": 300,
+    "sale_proceeds": 90,
+    "food_production_speed": 3.2,
+    "food_production_max_height": 9
+  },
+  {
+    "level": 22,
+    "upgrade_cost": 310,
+    "sale_proceeds": 93,
+    "food_production_speed": 3.1,
+    "food_production_max_height": 9
+  },
+  {
+    "level": 23,
+    "upgrade_cost": 320,
+    "sale_proceeds": 96,
+    "food_production_speed": 3,
+    "food_production_max_height": 9
+  },
+  {
+    "level": 24,
+    "upgrade_cost": 330,
+    "sale_proceeds": 99,
+    "food_production_speed": 2.9,
+    "food_production_max_height": 9
+  },
+  {
+    "level": 25,
+    "upgrade_cost": 340,
+    "sale_proceeds": 102,
+    "food_production_speed": 2.8,
+    "food_production_max_height": 9
+  },
+  {
+    "level": 26,
+    "upgrade_cost": 350,
+    "sale_proceeds": 105,
+    "food_production_speed": 3,
+    "food_production_max_height": 10
+  },
+  {
+    "level": 27,
+    "upgrade_cost": 360,
+    "sale_proceeds": 108,
+    "food_production_speed": 2.9,
+    "food_production_max_height": 10
+  },
+  {
+    "level": 28,
+    "upgrade_cost": 370,
+    "sale_proceeds": 111,
+    "food_production_speed": 2.8,
+    "food_production_max_height": 10
+  },
+  {
+    "level": 29,
+    "upgrade_cost": 380,
+    "sale_proceeds": 114,
+    "food_production_speed": 2.7,
+    "food_production_max_height": 10
+  },
+  {
+    "level": 30,
+    "upgrade_cost": 390,
+    "sale_proceeds": 117,
+    "food_production_speed": 2.6,
+    "food_production_max_height": 10
+  },
+  {
+    "level": 31,
+    "upgrade_cost": 400,
+    "sale_proceeds": 120,
+    "food_production_speed": 2.8,
+    "food_production_max_height": 11
+  },
+  {
+    "level": 32,
+    "upgrade_cost": 410,
+    "sale_proceeds": 123,
+    "food_production_speed": 2.7,
+    "food_production_max_height": 11
+  },
+  {
+    "level": 33,
+    "upgrade_cost": 420,
+    "sale_proceeds": 126,
+    "food_production_speed": 2.6,
+    "food_production_max_height": 11
+  },
+  {
+    "level": 34,
+    "upgrade_cost": 430,
+    "sale_proceeds": 129,
+    "food_production_speed": 2.5,
+    "food_production_max_height": 11
+  },
+  {
+    "level": 35,
+    "upgrade_cost": 440,
+    "sale_proceeds": 132,
+    "food_production_speed": 2.4,
+    "food_production_max_height": 11
+  },
+  {
+    "level": 36,
+    "upgrade_cost": 450,
+    "sale_proceeds": 135,
+    "food_production_speed": 2.6,
+    "food_production_max_height": 12
+  },
+  {
+    "level": 37,
+    "upgrade_cost": 460,
+    "sale_proceeds": 138,
+    "food_production_speed": 2.5,
+    "food_production_max_height": 12
+  },
+  {
+    "level": 38,
+    "upgrade_cost": 470,
+    "sale_proceeds": 141,
+    "food_production_speed": 2.4,
+    "food_production_max_height": 12
+  },
+  {
+    "level": 39,
+    "upgrade_cost": 480,
+    "sale_proceeds": 144,
+    "food_production_speed": 2.3,
+    "food_production_max_height": 12
+  },
+  {
+    "level": 40,
+    "upgrade_cost": 490,
+    "sale_proceeds": 147,
+    "food_production_speed": 2.2,
+    "food_production_max_height": 12
+  },
+  {
+    "level": 41,
+    "upgrade_cost": 500,
+    "sale_proceeds": 150,
+    "food_production_speed": 2.4,
+    "food_production_max_height": 13
+  },
+  {
+    "level": 42,
+    "upgrade_cost": 510,
+    "sale_proceeds": 153,
+    "food_production_speed": 2.3,
+    "food_production_max_height": 13
+  },
+  {
+    "level": 43,
+    "upgrade_cost": 520,
+    "sale_proceeds": 156,
+    "food_production_speed": 2.2,
+    "food_production_max_height": 13
+  },
+  {
+    "level": 44,
+    "upgrade_cost": 530,
+    "sale_proceeds": 159,
+    "food_production_speed": 2.1,
+    "food_production_max_height": 13
+  },
+  {
+    "level": 45,
+    "upgrade_cost": 540,
+    "sale_proceeds": 162,
+    "food_production_speed": 2,
+    "food_production_max_height": 13
+  },
+  {
+    "level": 46,
+    "upgrade_cost": 550,
+    "sale_proceeds": 165,
+    "food_production_speed": 2.2,
+    "food_production_max_height": 14
+  },
+  {
+    "level": 47,
+    "upgrade_cost": 560,
+    "sale_proceeds": 168,
+    "food_production_speed": 2.1,
+    "food_production_max_height": 14
+  },
+  {
+    "level": 48,
+    "upgrade_cost": 570,
+    "sale_proceeds": 171,
+    "food_production_speed": 2,
+    "food_production_max_height": 14
+  },
+  {
+    "level": 49,
+    "upgrade_cost": 580,
+    "sale_proceeds": 174,
+    "food_production_speed": 1.9,
+    "food_production_max_height": 14
+  },
+  {
+    "level": 50,
+    "upgrade_cost": 0,
+    "sale_proceeds": 177,
+    "food_production_speed": 1.8,
+    "food_production_max_height": 14
+  }
+]

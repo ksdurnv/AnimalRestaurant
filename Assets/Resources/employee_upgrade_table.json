@@ -1,0 +1,352 @@
+[
+  {
+    "level": 1,
+    "move_speed": 3,
+    "action_speed": 0.4,
+    "max_holds": 1,
+    "upgrade_cost": 100
+  },
+  {
+    "level": 2,
+    "move_speed": 3.1,
+    "action_speed": 0.395,
+    "max_holds": 1,
+    "upgrade_cost": 105
+  },
+  {
+    "level": 3,
+    "move_speed": 3.2,
+    "action_speed": 0.39,
+    "max_holds": 1,
+    "upgrade_cost": 110
+  },
+  {
+    "level": 4,
+    "move_speed": 3.3,
+    "action_speed": 0.385,
+    "max_holds": 1,
+    "upgrade_cost": 115
+  },
+  {
+    "level": 5,
+    "move_speed": 3.4,
+    "action_speed": 0.38,
+    "max_holds": 1,
+    "upgrade_cost": 120
+  },
+  {
+    "level": 6,
+    "move_speed": 3.5,
+    "action_speed": 0.375,
+    "max_holds": 2,
+    "upgrade_cost": 125
+  },
+  {
+    "level": 7,
+    "move_speed": 3.6,
+    "action_speed": 0.37,
+    "max_holds": 2,
+    "upgrade_cost": 130
+  },
+  {
+    "level": 8,
+    "move_speed": 3.7,
+    "action_speed": 0.365,
+    "max_holds": 2,
+    "upgrade_cost": 135
+  },
+  {
+    "level": 9,
+    "move_speed": 3.8,
+    "action_speed": 0.36,
+    "max_holds": 2,
+    "upgrade_cost": 140
+  },
+  {
+    "level": 10,
+    "move_speed": 3.9,
+    "action_speed": 0.355,
+    "max_holds": 2,
+    "upgrade_cost": 145
+  },
+  {
+    "level": 11,
+    "move_speed": 4,
+    "action_speed": 0.35,
+    "max_holds": 3,
+    "upgrade_cost": 150
+  },
+  {
+    "level": 12,
+    "move_speed": 4.1,
+    "action_speed": 0.345,
+    "max_holds": 3,
+    "upgrade_cost": 155
+  },
+  {
+    "level": 13,
+    "move_speed": 4.2,
+    "action_speed": 0.34,
+    "max_holds": 3,
+    "upgrade_cost": 160
+  },
+  {
+    "level": 14,
+    "move_speed": 4.3,
+    "action_speed": 0.335,
+    "max_holds": 3,
+    "upgrade_cost": 165
+  },
+  {
+    "level": 15,
+    "move_speed": 4.4,
+    "action_speed": 0.33,
+    "max_holds": 3,
+    "upgrade_cost": 170
+  },
+  {
+    "level": 16,
+    "move_speed": 4.5,
+    "action_speed": 0.325,
+    "max_holds": 4,
+    "upgrade_cost": 175
+  },
+  {
+    "level": 17,
+    "move_speed": 4.6,
+    "action_speed": 0.32,
+    "max_holds": 4,
+    "upgrade_cost": 180
+  },
+  {
+    "level": 18,
+    "move_speed": 4.7,
+    "action_speed": 0.315,
+    "max_holds": 4,
+    "upgrade_cost": 185
+  },
+  {
+    "level": 19,
+    "move_speed": 4.8,
+    "action_speed": 0.31,
+    "max_holds": 4,
+    "upgrade_cost": 190
+  },
+  {
+    "level": 20,
+    "move_speed": 4.9,
+    "action_speed": 0.305,
+    "max_holds": 4,
+    "upgrade_cost": 195
+  },
+  {
+    "level": 21,
+    "move_speed": 5,
+    "action_speed": 0.3,
+    "max_holds": 5,
+    "upgrade_cost": 200
+  },
+  {
+    "level": 22,
+    "move_speed": 5.1,
+    "action_speed": 0.295,
+    "max_holds": 5,
+    "upgrade_cost": 205
+  },
+  {
+    "level": 23,
+    "move_speed": 5.2,
+    "action_speed": 0.29,
+    "max_holds": 5,
+    "upgrade_cost": 210
+  },
+  {
+    "level": 24,
+    "move_speed": 5.3,
+    "action_speed": 0.285,
+    "max_holds": 5,
+    "upgrade_cost": 215
+  },
+  {
+    "level": 25,
+    "move_speed": 5.4,
+    "action_speed": 0.28,
+    "max_holds": 5,
+    "upgrade_cost": 220
+  },
+  {
+    "level": 26,
+    "move_speed": 5.5,
+    "action_speed": 0.275,
+    "max_holds": 6,
+    "upgrade_cost": 225
+  },
+  {
+    "level": 27,
+    "move_speed": 5.6,
+    "action_speed": 0.27,
+    "max_holds": 6,
+    "upgrade_cost": 230
+  },
+  {
+    "level": 28,
+    "move_speed": 5.7,
+    "action_speed": 0.265,
+    "max_holds": 6,
+    "upgrade_cost": 235
+  },
+  {
+    "level": 29,
+    "move_speed": 5.8,
+    "action_speed": 0.26,
+    "max_holds": 6,
+    "upgrade_cost": 240
+  },
+  {
+    "level": 30,
+    "move_speed": 5.9,
+    "action_speed": 0.255,
+    "max_holds": 6,
+    "upgrade_cost": 245
+  },
+  {
+    "level": 31,
+    "move_speed": 6,
+    "action_speed": 0.25,
+    "max_holds": 7,
+    "upgrade_cost": 250
+  },
+  {
+    "level": 32,
+    "move_speed": 6.1,
+    "action_speed": 0.245,
+    "max_holds": 7,
+    "upgrade_cost": 255
+  },
+  {
+    "level": 33,
+    "move_speed": 6.2,
+    "action_speed": 0.24,
+    "max_holds": 7,
+    "upgrade_cost": 260
+  },
+  {
+    "level": 34,
+    "move_speed": 6.3,
+    "action_speed": 0.235,
+    "max_holds": 7,
+    "upgrade_cost": 265
+  },
+  {
+    "level": 35,
+    "move_speed": 6.4,
+    "action_speed": 0.23,
+    "max_holds": 7,
+    "upgrade_cost": 270
+  },
+  {
+    "level": 36,
+    "move_speed": 6.5,
+    "action_speed": 0.225,
+    "max_holds": 8,
+    "upgrade_cost": 275
+  },
+  {
+    "level": 37,
+    "move_speed": 6.6,
+    "action_speed": 0.22,
+    "max_holds": 8,
+    "upgrade_cost": 280
+  },
+  {
+    "level": 38,
+    "move_speed": 6.7,
+    "action_speed": 0.215,
+    "max_holds": 8,
+    "upgrade_cost": 285
+  },
+  {
+    "level": 39,
+    "move_speed": 6.8,
+    "action_speed": 0.21,
+    "max_holds": 8,
+    "upgrade_cost": 290
+  },
+  {
+    "level": 40,
+    "move_speed": 6.9,
+    "action_speed": 0.205,
+    "max_holds": 8,
+    "upgrade_cost": 295
+  },
+  {
+    "level": 41,
+    "move_speed": 7,
+    "action_speed": 0.2,
+    "max_holds": 9,
+    "upgrade_cost": 300
+  },
+  {
+    "level": 42,
+    "move_speed": 7.1,
+    "action_speed": 0.195,
+    "max_holds": 9,
+    "upgrade_cost": 305
+  },
+  {
+    "level": 43,
+    "move_speed": 7.2,
+    "action_speed": 0.19,
+    "max_holds": 9,
+    "upgrade_cost": 310
+  },
+  {
+    "level": 44,
+    "move_speed": 7.3,
+    "action_speed": 0.185,
+    "max_holds": 9,
+    "upgrade_cost": 315
+  },
+  {
+    "level": 45,
+    "move_speed": 7.4,
+    "action_speed": 0.18,
+    "max_holds": 9,
+    "upgrade_cost": 320
+  },
+  {
+    "level": 46,
+    "move_speed": 7.5,
+    "action_speed": 0.175,
+    "max_holds": 10,
+    "upgrade_cost": 325
+  },
+  {
+    "level": 47,
+    "move_speed": 7.6,
+    "action_speed": 0.17,
+    "max_holds": 10,
+    "upgrade_cost": 330
+  },
+  {
+    "level": 48,
+    "move_speed": 7.7,
+    "action_speed": 0.165,
+    "max_holds": 10,
+    "upgrade_cost": 335
+  },
+  {
+    "level": 49,
+    "move_speed": 7.8,
+    "action_speed": 0.16,
+    "max_holds": 10,
+    "upgrade_cost": 340
+  },
+  {
+    "level": 50,
+    "move_speed": 7.9,
+    "action_speed": 0.155,
+    "max_holds": 10,
+    "upgrade_cost": 0
+  }
+]
