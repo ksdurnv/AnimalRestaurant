@@ -3,8 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Build.Reporting;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Build.Reporting;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.UIElements;
@@ -75,7 +75,7 @@ public class Employee : AnimalController
             {
                 for (int j = 0; j < foodStacks[i].foodStack.Count; j++)
                 {
-                    foodStacks[i].foodStack[j].transform.position = headPoint.position + new Vector3(0, j * 0.7f, 0);
+                    foodStacks[i].foodStack[j].transform.position = headPoint.position + new Vector3(0, (j) * 0.7f, 0);
                 }
             }
             for (int i = 0; i < garbageList.Count; i++)
@@ -801,12 +801,12 @@ public class Employee : AnimalController
                 }
             }
             FoodStack fs = foodStacks[n];
-
-            f.transform.DOJump(headPoint.position + new Vector3(0, 0.7f * fs.foodStack.Count, 0), r, 1, employeeData.action_speed * 0.9f).OnComplete(() =>
+          //  employeeData.action_speed*
+            f.transform.DOJump(headPoint.position + new Vector3(0, 0.7f * (fs.foodStack.Count + 1), 0), r, 1,  0.2f).OnComplete(() =>
             {
                 fs.foodStack.Add(f);
                
-                f.transform.position = headPoint.position + new Vector3(0, 0.7f * fs.foodStack.Count, 0);
+                f.transform.position = headPoint.position + new Vector3(0, 0.7f * (fs.foodStack.Count), 0);
                 //    foodList.Add(f);
                 audioSource.Play();
             });
@@ -1614,7 +1614,7 @@ public class Employee : AnimalController
                         }
                     }
 
-                    trans.Translate(dirs * Time.deltaTime * employeeData.move_speed, Space.World);
+                    trans.Translate(dirs * Time.fixedDeltaTime * employeeData.move_speed, Space.World);
                     float angle = Mathf.Atan2(dirs.x, dirs.z) * Mathf.Rad2Deg;
                     modelTrans.rotation = Quaternion.AngleAxis(angle, Vector3.up);
                     yield return null;

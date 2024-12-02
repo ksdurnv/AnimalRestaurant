@@ -9,6 +9,17 @@ public class AnimalCard : MonoBehaviour
     public Image backGlow;
     public Image glow;
 
+    public int id;
+    public string name;    // 동물 이름
+    public float speed;
+    public float eatSpeed;
+    public int minOrder;
+    public int maxOrder;
+    public int likeFood;
+    public int hateFood;
+
+    public CustomerInfoPopup customerInfoPopup;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -22,9 +33,19 @@ public class AnimalCard : MonoBehaviour
         glow = transform.Find("Mask/Glow").GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClick()
     {
+        customerInfoPopup.gameObject.SetActive(true);
 
+        customerInfoPopup.id = id;
+        customerInfoPopup.name = name;
+        customerInfoPopup.speed = speed;
+        customerInfoPopup.eatSpeed = eatSpeed;
+        customerInfoPopup.minOrder = minOrder;
+        customerInfoPopup.maxOrder = maxOrder;
+        customerInfoPopup.likeFood = likeFood;
+        customerInfoPopup.hateFood = hateFood;
+
+        customerInfoPopup.SetCustomerInfo();
     }
 }

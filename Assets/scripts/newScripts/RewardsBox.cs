@@ -37,7 +37,7 @@ public class RewardsBox : MonoBehaviour
             if (testScale.x < 0)
             {
                 transform.localScale = new Vector3(2, 2, 2);
-              //  removeCoroutine = null;
+                //  removeCoroutine = null;
                 fallSpeed = 0.5f;
                 removes = false;
                 if (gameInstance.GameIns.applianceUIManager.currentBox == this) gameInstance.GameIns.applianceUIManager.currentBox = null;
@@ -50,6 +50,7 @@ public class RewardsBox : MonoBehaviour
                 transform.localScale = testScale;
             }
         }
+     
         //  gameObject.SetActive(false);
        
     }
@@ -164,6 +165,7 @@ public class RewardsBox : MonoBehaviour
     Coroutine removeCoroutine;
     public bool ClearFishes()
     {
+        Debug.Log("Clear");
         if(foods.Count ==0)
         {
             removes = true;

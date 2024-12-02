@@ -33,6 +33,15 @@ public class PanelAnimalsController : MonoBehaviour
             {
                 animalCard[i].gameObject.SetActive(true);
 
+                animalCard[i].id = animal.id;
+                animalCard[i].name = animal.name;
+                animalCard[i].speed = animal.speed;
+                animalCard[i].eatSpeed = animal.eatSpeed;
+                animalCard[i].minOrder = animal.minOrder;
+                animalCard[i].maxOrder = animal.maxOrder;
+                animalCard[i].likeFood = animal.likeFood;
+                animalCard[i].hateFood = animal.hateFood;
+
                 for (int j = 0; j < 4; j++)
                 {
                     if (animal.tier == j + 1)
@@ -44,7 +53,8 @@ public class PanelAnimalsController : MonoBehaviour
                 }
                 
             }
-        }
-        
+        }        
     }
+
+
 }

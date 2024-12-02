@@ -12,7 +12,7 @@ using TMPro;
 
 //using TMPro.EditorUtilities;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static FoodMachine;
@@ -1863,6 +1863,8 @@ public class AnimalController : MonoBehaviour
 
             bool ch = false;
             Vector3 checkVector = trans.position;
+            float mag = (checkVector - (trans.position + di * diff)).magnitude;
+            float p = 1 / (mag * 2);
             float f = 0;
             while (f <= 1)
             {
@@ -1873,7 +1875,7 @@ public class AnimalController : MonoBehaviour
                     ch = true;
                     break;
                 }
-                f += 0.01f;
+                f += p;
                 
             }
 

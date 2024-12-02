@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
+//using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 //?œê?
 
 public struct FoodsAnimalsWant
@@ -170,6 +171,7 @@ public class AnimalSpawner : MonoBehaviour
 
                                 while (deliveryCustomer.foodStacks[0].foodStack.Count != deliveryCustomer.foodStacks[0].needFoodNum)
                                 {
+                                    //Debug.Log("AAA");
                                     while(coroutineTimer2 <= 2f)
                                     {
                                         coroutineTimer2 += Time.deltaTime;
@@ -177,6 +179,7 @@ public class AnimalSpawner : MonoBehaviour
                                     }
                                     coroutineTimer2 = 0;
                                 }
+                                instance.GameIns.uiManager.UpdateOrder(deliveryCustomer, Counter.CounterType.Delivery);
                                 instance.GameIns.animalManager.DespawnCustomer(deliveryCustomer, true);
                                 deliveryCustomer = null;
                             }
@@ -198,7 +201,7 @@ public class AnimalSpawner : MonoBehaviour
                                         if (workSpaceManager.packingTables[i].counterType == Counter.CounterType.Delivery)
                                         {
                                             FoodStack foodStack = new FoodStack();
-                                            foodStack.needFoodNum = 4;
+                                            foodStack.needFoodNum = 1;
                                             foodStack.type = FoodMachine.MachineType.PackingTable;
                                             deliveryCustomer.foodStacks.Add(foodStack);
 

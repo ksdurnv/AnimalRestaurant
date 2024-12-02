@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.Animations; // ***** TextMeshPro를 사용하기 위해 추가 *****
+//using UnityEditor.Animations; // ***** TextMeshPro를 사용하기 위해 추가 *****
 
 public class SliderController : MonoBehaviour
 {

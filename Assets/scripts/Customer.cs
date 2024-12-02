@@ -57,7 +57,7 @@ public class Customer : AnimalController
 
                 FoodStack foodStack = new FoodStack();
                 foodStack.needFoodNum = UnityEngine.Random.Range(minOrder, maxOrder);
-                //foodStack.needFoodNum = 6;
+                foodStack.needFoodNum = 1;
                 foodStack.type = FoodMachine.MachineType.BurgerMachine;
                 foodStacks.Add(foodStack);
             }
@@ -68,7 +68,7 @@ public class Customer : AnimalController
 
                 FoodStack foodStack = new FoodStack();
                 foodStack.needFoodNum = UnityEngine.Random.Range(minOrder, maxOrder);
-                //foodStack.needFoodNum = 5;
+                foodStack.needFoodNum = 1;
                 foodStack.type = FoodMachine.MachineType.CokeMachine;
                 foodStacks.Add(foodStack);
             }

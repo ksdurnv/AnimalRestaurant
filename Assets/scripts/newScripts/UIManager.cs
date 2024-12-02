@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Order[] order;
 
     public Button animalGuideButton;
+    public Panel panel;
     public Button goRestaurant;
     public Button goDraw;
     public Button drawBtn;
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        panel = GetComponentInChildren<Panel>();
         instance.GameIns.uiManager = this;
     }
     void Start()
@@ -78,10 +80,10 @@ public class UIManager : MonoBehaviour
 
                 instance.GameIns.app.pos = instance.GameIns.inputManager.cameraTrans.position;
 
-                if (instance.GameIns.applianceUIManager.currentBox != null)
+            /*    if (instance.GameIns.applianceUIManager.currentBox != null)
                 {
                     instance.GameIns.applianceUIManager.currentBox.ClearFishes();
-                }
+                }*/
                 cameraSize = Camera.main.orthographicSize;                
 
                 StartCoroutine(FadeInFadeOut(true, 2));
@@ -135,11 +137,13 @@ public class UIManager : MonoBehaviour
 
     void ShowUI(int t)
     {
-        instance.GameIns.applianceUIManager.UIClearAll();
+       
         if (t == 0)
         {
+        
             if (bGuideOn)
             {
+                instance.GameIns.applianceUIManager.UIClearAll(false);
                 drawBtn.gameObject.SetActive(false);
                 drawSpeedUpBtn.gameObject.SetActive(false);
             }
@@ -147,20 +151,27 @@ public class UIManager : MonoBehaviour
             {
                 if (instance.GameIns.app.currentScene == SceneState.Draw)
                 {
+                    instance.GameIns.applianceUIManager.UIClearAll(false);
                     drawBtn.gameObject.SetActive(true);
                     drawSpeedUpBtn.gameObject.SetActive(true);
-                }                    
+                }        
+                else
+                {
+                    instance.GameIns.applianceUIManager.UIClearAll(true);
+                }
             }
             animalGuide.SetActive(bGuideOn);
         }
         else if (t == 1)
-        {            
+        {
+            instance.GameIns.applianceUIManager.UIClearAll(true);
             animalGuide.SetActive(false);
             bGuideOn = false;
             instance.GameIns.app.ChangeScene_Restaurant();
         }
         else if (t == 2)
         {
+            instance.GameIns.applianceUIManager.UIClearAll(false);
             animalGuide.SetActive(false);
             bGuideOn = false;
             instance.GameIns.app.ChangeScene_DrawScene();

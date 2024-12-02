@@ -11,8 +11,12 @@ public class Panel : MonoBehaviour
     public Button thisButton;
     public float height;
     public float speed;
+    public Image interactiveImage;
 
     bool spread = false;
+
+    Coroutine currentCoroutine;
+
     public void Start()
     {
         thisButton.onClick.AddListener(() =>
@@ -26,12 +30,14 @@ public class Panel : MonoBehaviour
         if(bSpread)
         {
             spread = false;
-            StartCoroutine(GatheringRectTranform());
+            if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+            currentCoroutine = StartCoroutine(GatheringRectTranform());
         }
         else
         {
             spread = true;
-            StartCoroutine(SpreadRectTranform());
+            if (currentCoroutine != null) StopCoroutine(currentCoroutine);
+            currentCoroutine = StartCoroutine(SpreadRectTranform());
         }
        
     }
@@ -41,22 +47,19 @@ public class Panel : MonoBehaviour
         RectTransform rectTransforms = rectTransform;
         Vector2 currentVec = rectTransform.sizeDelta;
         Vector3 currentVec2 = rectTransform.localPosition;
-        while (true)
+        float elapsedTimer = 0;
+        while (elapsedTimer / 0.3f <= 1)
         {
-            currentVec += new Vector2(0, 500 * Time.unscaledDeltaTime * 4);
-            currentVec2 += new Vector3(0, -250f * Time.unscaledDeltaTime * 4, 0);
-            if(currentVec.y > 600)
-            {
-                currentVec.y = 600;
-                currentVec2.y = -250f;
-                rectTransform.sizeDelta = currentVec;
-                rectTransforms.localPosition = currentVec2;
-                break;
-            }
-                rectTransform.sizeDelta = currentVec;
-                rectTransform.localPosition = currentVec2;
+            elapsedTimer += Time.deltaTime;
+            float cal = Mathf.Lerp(currentVec2.y, 0, elapsedTimer / 0.3f);
+           
+            Vector3 v = new Vector3(currentVec2.x, cal, currentVec2.z);
+            rectTransform.localPosition = v;
+
+          
             yield return null;
         }
+        interactiveImage.enabled = true;
     }
 
     IEnumerator GatheringRectTranform()
@@ -64,21 +67,18 @@ public class Panel : MonoBehaviour
         RectTransform rectTransforms = rectTransform;
         Vector2 currentVec = rectTransform.sizeDelta;
         Vector3 currentVec2 = rectTransform.localPosition;
-        while (true)
+        float elapsedTimer = 0;
+        while (elapsedTimer / 0.3f <= 1)
         {
-          //  currentVec -= new Vector2(0, 500 * Time.unscaledDeltaTime );
-            currentVec2 -= new Vector3(0, -250f * Time.unscaledDeltaTime * 4 , 0);
-            if (currentVec2.y > 0)
-            {
-             //   currentVec.y = 100;
-                currentVec2.y = 0f;
-              //  rectTransform.sizeDelta = currentVec;
-                rectTransforms.localPosition = currentVec2;
-                break;
-            }
-           // rectTransform.sizeDelta = currentVec;
-            rectTransform.localPosition = currentVec2;
+            elapsedTimer += Time.deltaTime;
+            float cal = Mathf.Lerp(currentVec2.y, 400, elapsedTimer / 0.3f);
+
+            Vector3 v = new Vector3(currentVec2.x, cal, currentVec2.z);
+            rectTransform.localPosition = v;
+
+
             yield return null;
         }
+        interactiveImage.enabled = false;
     }
 }

@@ -31,6 +31,9 @@ public class App : MonoBehaviour
     }
     private void Start()
     {
+
+     
+
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);
@@ -145,6 +148,7 @@ public class App : MonoBehaviour
         gameInstance.GameIns.inputManager.cameraTrans.position = pos;
       //  gameInstance.GameIns.inputManager.DragScreen_WindowEditor(true);
         gameInstance.GameIns.inputManager.inputDisAble = false;
+    //    gameInstance.GameIns.applianceUIManager.UIClearAll(true);
         Time.timeScale = 1;
     }
 

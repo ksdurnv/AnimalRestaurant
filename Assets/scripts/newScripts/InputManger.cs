@@ -134,6 +134,7 @@ using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 //using static DG.Tweening.DOTweenModuleUtils;
 
 public class InputManger : MonoBehaviour
@@ -157,7 +158,7 @@ public class InputManger : MonoBehaviour
     public GameObject go;
 
     public bool inputDisAble;
-
+    public bool bCleaningMode; //탁자를 치울 수 있는가
  //   public bool a;
 //    Vector3 lastPoint = new Vector3();
 
@@ -217,8 +218,12 @@ public class InputManger : MonoBehaviour
  //   bool entireStart;
     float doubleClickTimer = 0.2f;
     float lastClick = -1f;
+    public Vector3 preLoc;
+    public Vector3 curLoc;
     void Update()
     {
+        preLoc = curLoc;
+        curLoc = cameraRange.position;
         if (!inputDisAble)
         {
             if (Application.platform == RuntimePlatform.WindowsEditor)
@@ -346,31 +351,60 @@ public class InputManger : MonoBehaviour
 
     float originSize;
     Vector3 deltaMouse;
+    Vector3 cameraSpeeds;
     public void DragScreen_WindowEditor(bool draged = false)
     {
         if (Input.GetMouseButtonDown(0) && !inOtherAction || draged)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Default")) || draged)
+            GraphicRaycaster ggr = gameInstance.GameIns.uiManager.GetComponent<GraphicRaycaster>();
+            EventSystem es = GetComponent<EventSystem>();
+         
+            PointerEventData ped = new PointerEventData(es);
+            ped.position = Input.mousePosition;
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            ggr.Raycast(ped, raycastResults);
+            bool chck = false;
+            Debug.Log(raycastResults.Count);
+            for (int i = 0; i < raycastResults.Count; i++)
             {
-                dragOrigin = hit.point;
-                isDragging = true;
-                deltaResult = hit;
-            }
-            if (Physics.Raycast(ray, out RaycastHit h, Mathf.Infinity, 1 << 13))
-            {
-                if (h.collider.GetComponent<Table>() != null)
+                if (raycastResults[i].gameObject.GetComponentInParent<UIManager>())
                 {
-                    if (h.collider.GetComponent<Table>().isDirty)
-                    {
-                        clickedTable = h.collider.GetComponent<Table>();
-                        clickedTable.interacting = true;
-                        gameInstance.GameIns.workSpaceManager.trashCans[0].throwPlace.SetActive(true);
-                //        originSize = Camera.main.orthographicSize;
-                        targetVector = Input.mousePosition;
-                       // entireStart = true;
-                        StopAllCoroutines();
-                        StartCoroutine(ViewEntireScreen());
+                    chck = true;
+                    break;
+                }
+            }
+
+            if (!chck)
+            {
+
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Default")) || draged)
+                {
+                    dragOrigin = hit.point;
+                    isDragging = true;
+                    deltaResult = hit;
+                }
+                if (Physics.Raycast(ray, out RaycastHit h, Mathf.Infinity, 1 << 11))
+                {
+                    
+                    if (h.collider.GetComponent<Table>() != null && bCleaningMode)
+                    { 
+                        if (h.collider.GetComponent<Table>().isDirty)
+                        {
+                          
+                            clickedTable = h.collider.GetComponent<Table>();
+                            Debug.Log("TrashCan Enabled");
+                            gameInstance.GameIns.applianceUIManager.trashCan.SetActive(true);
+
+                            clickedTable.interacting = true;
+                            gameInstance.GameIns.workSpaceManager.trashCans[0].throwPlace.SetActive(true);
+                            //        originSize = Camera.main.orthographicSize;
+                            targetVector = Input.mousePosition;
+                        
+                         //   StopAllCoroutines();
+                           // StartCoroutine(ViewEntireScreen());
+                        }
                     }
                 }
             }
@@ -422,6 +456,34 @@ public class InputManger : MonoBehaviour
         {
             if(clickedTable != null && inOtherAction ==false)
             {
+                EventSystem es = GetComponent<EventSystem>();
+                GraphicRaycaster ggr2 = gameInstance.GameIns.applianceUIManager.GetComponent<GraphicRaycaster>();
+
+                PointerEventData ped2 = new PointerEventData(es);
+                ped2.position = Input.mousePosition;
+                List<RaycastResult> raycastResults2 = new List<RaycastResult>();
+                ggr2.Raycast(ped2, raycastResults2);
+                bool chck2 = false;
+                for (int i = 0; i < raycastResults2.Count; i++)
+                {
+                    if (raycastResults2[i].gameObject.GetComponentInParent<ApplianceUIManager>() && raycastResults2[i].gameObject.CompareTag("trashcan"))
+                    {
+
+                        chck2 = true;
+                        break;
+                    }
+                }
+
+                if (chck2)
+                {
+                    Vector3 hh = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                     
+                    clickedTable.trashPlate.transform.position = hh;
+                    //clickedTable.interacting=true;
+                    //   targetVector = Input.mousePosition;
+                    clickedTable.CleanTableManually(hh);
+                }
+
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
              
@@ -717,6 +779,7 @@ public class InputManger : MonoBehaviour
                 Vector3 currentPoint = hit.point;
                 if (RayMove(dir, diff) == false) dragTimer = 0;
                 diff -= Time.deltaTime * reduceSpeed;
+                if(diff < 0) diff = 0;
             }
         }
     }
@@ -863,15 +926,20 @@ public class InputManger : MonoBehaviour
         }
     }
 
-   // private void OnDrawGizmos()
-   // {
-       // Gizmos.color = Color.green;
-       // Gizmos.DrawWireSphere(cameraRange.position, Camera.main.orthographicSize / 2.5f); //new Vector3(Camera.main.orthographicSize / 2.5f * 2, 0, Camera.main.orthographicSize / 2.5f * 2));
-  //  }
+    // private void OnDrawGizmos()
+    // {
+    // Gizmos.color = Color.green;
+    // Gizmos.DrawWireSphere(cameraRange.position, Camera.main.orthographicSize / 2.5f); //new Vector3(Camera.main.orthographicSize / 2.5f * 2, 0, Camera.main.orthographicSize / 2.5f * 2));
+    //  }
 
+    public Vector3 lastLoc;
     private void ClickMachine()
     {
-        if (Input.GetMouseButtonDown(0))
+       // Debug.Log(preLoc  + " " + curLoc);
+
+        float test = (preLoc - curLoc).magnitude;
+     
+        if (Input.GetMouseButtonUp(0) && test < 0.01f)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
